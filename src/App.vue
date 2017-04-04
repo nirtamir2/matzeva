@@ -1,48 +1,21 @@
+
 <template>
   <div id="app">
     <img src="./assets/matzeva-logo.png">
     <h1>מצב"ה</h1>
-    <mzv-list-item></mzv-list-item>
+    <mzv-list-item v-for="soldier in soldiers" :key="soldier.id" :soldier="soldier"></mzv-list-item>
   </div>
 </template>
 
 <script>
+import { getMatzevaSoldiers } from './services/soldiers.service'
+
 export default {
   name: 'app',
-  data() {
+  data: function(){
     return {
-      msg: 'Welcome to Your Vue.js App'
+      soldiers: getMatzevaSoldiers()
     }
   }
 }
 </script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-
-h1,
-h2 {
-  font-weight: normal;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
-}
-</style>
