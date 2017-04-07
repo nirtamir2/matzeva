@@ -1,5 +1,4 @@
-export function getRandomBoolean()
-{
+export function getRandomBoolean() {
     return Math.random() >= 0.5;
 }
 
@@ -37,8 +36,7 @@ export function getSoldiers() {
     }, []);
 };
 
-export function getMatzevaSoldiers()
-{
+export function getMatzevaSoldiers() {
     return getSoldiers().reduce((acc, soldier, i) => {
         acc.push({
             id: i,
@@ -47,12 +45,24 @@ export function getMatzevaSoldiers()
             i: i,
             isHere: getRandomBoolean(),
             isKnown: getRandomBoolean(),
+            status: 'UNKNOWN'
         });
         return acc;
     }, []);
-}
+};
+
+export function getMatzevaSoldiersFromFirebase() {
+    return firebase.database().ref('/matzevas/0/soldiers').once('value').then((snapshot)=>{
+        return snapshot.val();});
+};
+export function updateSoldierStatus(newStatus) {
+    return firebase.database().ref('/matzevas/0/soldiers/'+newStatus.id+'/status').set(newStatus.status);
+    console.log('status updated!');
+};
 
 export default {
     getSoldiers,
-    getMatzevaSoldiers
+    getMatzevaSoldiers,
+    getMatzevaSoldiersFromFirebase,
+    updateSoldierStatus
 }
