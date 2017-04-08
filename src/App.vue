@@ -1,14 +1,14 @@
 
 <template>
   <div id="app">
+    
+  <md-whiteframe md-elevation="2">
+    <md-toolbar>
+      <h1 class="md-title">מצב"ה</h1>
+    </md-toolbar>
     <img src="./assets/matzeva-logo.png">
-    <h1>מצב"ה</h1>
-    <button @click="doIt">CLICK ME FIREBASE</button>
-    <div>
-      <mzv-speed-dialer></mzv-speed-dialer>
-      <mzv-speed-dialer></mzv-speed-dialer>
-      <mzv-speed-dialer></mzv-speed-dialer>
-    </div>
+  </md-whiteframe>
+
     <mzv-list-item v-for="(soldier,index) in soldiers"
                    :key="soldier.name"
                    :image="soldier.image"
@@ -17,6 +17,7 @@
                    :id="index"
                    class="small"
                    @statusChanged="updateStatus($event)"></mzv-list-item>
+                   
   </div>
 </template>
 
