@@ -57,7 +57,6 @@ export function getMatzevaSoldiersFromFirebase() {
 };
 export function updateSoldierStatus(newStatus) {
     return firebase.database().ref('/matzevas/0/soldiers/'+newStatus.id+'/status').set(newStatus.status);
-    console.log('status updated!');
 };
 
 export default {

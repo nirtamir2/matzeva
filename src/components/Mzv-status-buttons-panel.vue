@@ -3,12 +3,12 @@
             <md-button @click.native="setNotHere"
                        :class="{'not-here': status === 'NOT_HERE'}"
                        class="md-icon-button md-raised">
-                <md-icon md-src="/src/assets/close.svg">X</md-icon>
+                <md-icon md-src="../../src/assets/close.svg">X</md-icon>
             </md-button>
             <md-button @click.native="setHere"
                        :class="{'here': status === 'HERE'}"
                        class="md-icon-button md-raised">
-                <md-icon md-src="/src/assets/check.svg">V</md-icon>
+                <md-icon md-src="../../src/assets/check.svg">V</md-icon>
             </md-button>
         </md-layout>
 </template>

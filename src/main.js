@@ -21,8 +21,8 @@ Vue.component('mzv-list-item', listItme);
 
 
 new Vue({
-  el: '#app',
-  render: h => h(App),
-})
+    el: '#app',
+    render: h => h(App),
+});
 
 
