@@ -41,8 +41,4 @@ export default {
 .not-here {
     background-color: lightcoral;
 }
-
-.unknown {
-    background-color: lightgray;
-}
 </style>

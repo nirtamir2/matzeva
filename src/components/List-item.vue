@@ -25,10 +25,11 @@
 </template>
 
 <script>
+    import statusPanel from './Status-buttons-panel.vue';
     export default {
         name: 'mzv-list-item',
         methods: {
-            changeStatus: function (value) {
+            changeStatus(value) {
                 this.$emit('statusChanged', {id: this.id, status: value});
             }
         },
@@ -39,26 +40,21 @@
             status: {required: false, type: String, default: 'UNKNOWN'},
             id: {required: false, type: Number, default: -1},
         },
-        data: function () {
+        components: {
+            'mzv-status-buttons-panel': statusPanel
+        },
+        data() {
             return {
                 initialValue: '',
 
             };
         },
-        computed: function () {
+        computed() {
             return {}
         }
-    }
+    };
 </script>
 <style scoped>
-    .redColor {
-        background-color: red;
-    }
-
-    .greenColor {
-        background-color: green;
-    }
-
     .fade-enter-active, .fade-leave-active {
         transition: opacity .5s
     }

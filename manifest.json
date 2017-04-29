@@ -1,0 +1,12 @@
+{
+  "short_name": "מצב\"ה",
+  "name": "מצב\"ה",
+  "icons": [
+    {
+      "src": "src/assets/matzeva-logo.png",
+      "type": "image/png",
+      "sizes": "48x48"
+    }
+  ],
+  "display": "standalone"
+}

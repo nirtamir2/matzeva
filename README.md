@@ -1,6 +1,8 @@
-# first-vue
+# matzeva app
 
-> A Vue.js project
+> A Vue.js project.
+יכול לעזור במצב"ה (מצב הכוחות) בצבא.
+
 
 ## Build Setup
 
